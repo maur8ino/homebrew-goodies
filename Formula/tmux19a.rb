@@ -8,6 +8,8 @@ class Tmux19a < Formula
   depends_on 'pkg-config' => :build
   depends_on 'libevent'
 
+  conflicts_with "tmux", :because => "this is an older version of tmux"
+
   def install
     system "sh", "autogen.sh" if build.head?
 
