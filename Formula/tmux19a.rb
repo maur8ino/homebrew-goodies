@@ -1,5 +1,3 @@
-require 'formula'
-
 class Tmux19a < Formula
   desc "Terminal multiplexer (v1.9a)"
   homepage 'https://tmux.github.io/'
@@ -18,7 +16,7 @@ class Tmux19a < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}"
-    system "make install"
+    system "make", "install"
 
     bash_completion.install "examples/bash_completion_tmux.sh" => 'tmux'
     (share/'tmux').install "examples"

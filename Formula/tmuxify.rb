@@ -1,5 +1,3 @@
-require "formula"
-
 class Tmuxify < Formula
   desc "Bash tool inspired in tmuxinator"
   homepage "https://github.com/tonchis/tmuxify"
