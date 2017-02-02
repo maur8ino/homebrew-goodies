@@ -1,17 +1,20 @@
+language: objective-c
 env:
   matrix:
-    - FORMULA_VERSION=
+    - PACKAGE=tmux19a
+    - PACKAGE=tmuxify
 rvm: system
 before_install:
   - brew update
   - brew --env
   - brew config
 install:
-  - mkdir -p $(brew --repo)/Library/Taps/maur8ino
-  - ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/maur8ino/homebrew-development-environment
+  - mkdir -p $(brew --repo)/Library/Taps/travis
+  - ln -s $PWD $(brew --repo)/Library/Taps/travis/homebrew-goodies
+  - brew tap --repair
 script:
-  - brew install tmux $FORMULA_VERSION --verbose
-  - brew audit tmux --strict
-  - brew test tmux
+  - brew audit --strict $PACKAGE
+  - brew install --verbose $PACKAGE
+  - brew test $PACKAGE
 matrix:
   fast_finish: true
