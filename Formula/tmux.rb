@@ -5,14 +5,6 @@ class Tmux < Formula
   url 'https://github.com/tmux/tmux/releases/download/1.9a/tmux-1.9a.tar.gz'
   sha256 'c5e3b22b901cf109b20dab54a4a651f0471abd1f79f6039d79b250d21c2733f5'
 
-  bottle do
-    cellar :any
-    revision 1
-    sha1 "5a5e180e33339671bc8c82ed58c26862da037f30" => :yosemite
-    sha1 "6092f92f5cd7eeb6ddf3b555cd4e655c4c85e826" => :mavericks
-    sha1 "981c8c199a2ea3df18b6651205b4616459ae1f8c" => :mountain_lion
-  end
-
   head do
     url 'git://github.com/tmux/tmux.git'
 
