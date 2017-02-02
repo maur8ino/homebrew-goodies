@@ -1,0 +1,17 @@
+env:
+  matrix:
+    - FORMULA_VERSION=
+rvm: system
+before_install:
+  - brew update
+  - brew --env
+  - brew config
+install:
+  - mkdir -p $(brew --repo)/Library/Taps/maur8ino
+  - ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/maur8ino/homebrew-development-environment
+script:
+  - brew install tmux $FORMULA_VERSION --verbose
+  - brew audit tmux --strict
+  - brew test tmux
+matrix:
+  fast_finish: true
