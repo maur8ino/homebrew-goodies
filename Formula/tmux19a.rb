@@ -1,6 +1,7 @@
 require 'formula'
 
 class Tmux19a < Formula
+  desc "Terminal multiplexer (v1.9a)"
   homepage 'https://tmux.github.io/'
   url 'https://github.com/tmux/tmux/releases/download/1.9a/tmux-1.9a.tar.gz'
   sha256 'c5e3b22b901cf109b20dab54a4a651f0471abd1f79f6039d79b250d21c2733f5'
